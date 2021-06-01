@@ -79,7 +79,7 @@
 
   <properties>
     <asynchttpclient.version>2.10.1</asynchttpclient.version>
-    <hadoop.version>2.7.3</hadoop.version>
+    <hadoop.version>3.2.1</hadoop.version>
     <hadoop.scope>compile</hadoop.scope>
     <spark.scala-2.11.version>2.4.5</spark.scala-2.11.version>
     <spark.scala-2.12.version>2.4.5</spark.scala-2.12.version>
@@ -106,8 +106,8 @@
     <py4j.version>0.10.7</py4j.version>
     <scala-2.11.version>2.11.12</scala-2.11.version>
     <scala-2.12.version>2.12.10</scala-2.12.version>
-    <scala.binary.version>2.11</scala.binary.version>
-    <scala.version>${scala-2.11.version}</scala.version>
+    <scala.binary.version>2.12</scala.binary.version>
+    <scala.version>${scala-2.12.version}</scala.version>
     <scalatest.version>3.0.8</scalatest.version>
     <scalatra.version>2.6.5</scalatra.version>
     <java.version>1.8</java.version>
@@ -115,9 +115,9 @@
     <execution.root>${user.dir}</execution.root>
     <spark.home>${execution.root}/dev/spark</spark.home>
     <spark.bin.download.url>
-      https://archive.apache.org/dist/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
+      https://ftp.itu.edu.tr/Mirror/Apache/spark/spark-3.1.1/spark-3.1.1-bin-without-hadoop.tgz
     </spark.bin.download.url>
-    <spark.bin.name>spark-2.4.5-bin-hadoop2.7</spark.bin.name>
+    <spark.bin.name>spark-3.1.1-bin-without-hadoop</spark.bin.name>
     <!--  used for testing, NCSARequestLog use it for access log  -->
     <livy.log.dir>${basedir}/target</livy.log.dir>
 
@@ -638,7 +638,7 @@
         <plugin>
           <groupId>net.alchim31.maven</groupId>
           <artifactId>scala-maven-plugin</artifactId>
-          <version>4.2.0</version>
+          <version>4.5.2</version>
           <executions>
             <execution>
               <goals>
@@ -1022,7 +1022,7 @@
             <configuration>
               <resourceBundles>
                 <resourceBundle>org.apache:apache-jar-resource-bundle:1.4</resourceBundle>
-                <resourceBundle>org.apache.apache.resources:apache-incubator-disclaimer-resource-bundle:1.2-SNAPSHOT</resourceBundle>
+                <resourceBundle>org.apache:apache-incubator-disclaimer-resource-bundle:1.1</resourceBundle>
               </resourceBundles>
             </configuration>
           </execution>
@@ -1053,16 +1053,16 @@
     </profile>
 
     <profile>
-      <id>spark-3.0</id>
+      <id>spark-3.1.1</id>
       <activation>
         <property>
-          <name>spark-3.0</name>
+          <name>spark-3.1.1</name>
         </property>
       </activation>
       <properties>
-        <spark.scala-2.12.version>3.0.0</spark.scala-2.12.version>
+        <spark.scala-2.12.version>3.1.1</spark.scala-2.12.version>
         <spark.scala-2.11.version>2.4.5</spark.scala-2.11.version>
-        <spark.version>${spark.scala-2.11.version}</spark.version>
+        <spark.version>${spark.scala-2.12.version}</spark.version>
         <netty.spark-2.12.version>4.1.47.Final</netty.spark-2.12.version>
         <netty.spark-2.11.version>4.1.47.Final</netty.spark-2.11.version>
         <netty.version>${netty.spark-2.11.version}</netty.version>
@@ -1072,9 +1072,9 @@
         <json4s.spark-2.12.version>3.6.6</json4s.spark-2.12.version>
         <json4s.version>${json4s.spark-2.11.version}</json4s.version>
         <spark.bin.download.url>
-          https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
+          https://ftp.itu.edu.tr/Mirror/Apache/spark/spark-3.1.1/spark-3.1.1-bin-without-hadoop.tgz
         </spark.bin.download.url>
-        <spark.bin.name>spark-3.0.0-bin-hadoop2.7</spark.bin.name>
+        <spark.bin.name>spark-3.1.1-bin-without-hadoop</spark.bin.name>
       </properties>
     </profile>
 
